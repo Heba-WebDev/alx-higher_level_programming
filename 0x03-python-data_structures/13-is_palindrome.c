@@ -1,25 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "lists.h"
-
-/**
- * reverse_string - reverses a string in place
- * @s: string to reverse
- */
-void reverse_string(char *s)
-{
-int len = strlen(s);
-int i;
-char temp;
-
-for (i = 0; i < len / 2; i++)
-{
-temp = s[i];
-s[i] = s[len - i - 1];
-s[len - i - 1] = temp;
-}
-}
 
 /**
  * is_palindrome - checks if a singly linked list is a palindrome
@@ -30,35 +13,34 @@ s[len - i - 1] = temp;
 
 int is_palindrome(listint_t **head)
 {
-char *str;
-int i = 0;
+char *str[1024];
+int len, j, i = 0;
 listint_t *node = *head;
 
-str = malloc(sizeof(char) * 1000);
-
 while (node)
 {
-str[i] = (char)node->n;
-i++;
-node = node->next;
+   str[i] = (char)node->n;
+   i++;
+   node = node->next;
 }
-str[i] = '\0';
 
-reverse_string(str);
+if (i % 2 == 0)
+{
+len = i / 2;
+}
+else
+{
+len = floor(i / 2);
+}
 
-node = *head;
-i = 0;
-while (node)
+for(j = 0; j < len; j++)
 {
-if (str[i] != (char)node->n)
+if (str[j] != str[i])
 {
-free(str);
 return (0);
 }
-i++;
-node = node->next;
+i--;
 }
 
-free(str);
 return (1);
 }
