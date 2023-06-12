@@ -13,7 +13,7 @@
 
 int is_palindrome(listint_t **head)
 {
-char *str[1024];
+char str[1024];
 int len, j, i = 0;
 listint_t *node = *head;
 
@@ -35,11 +35,10 @@ len = floor(i / 2);
 
 for (j = 0; j < len; j++)
 {
-if (str[j] != str[i])
+if (str[j] != str[i - j - 1])
 {
 return (0);
 }
-i--;
 }
 
 return (1);
