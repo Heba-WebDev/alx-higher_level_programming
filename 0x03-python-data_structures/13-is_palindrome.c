@@ -19,9 +19,9 @@ listint_t *node = *head;
 
 while (node)
 {
-   str[i] = (char)node->n;
-   i++;
-   node = node->next;
+str[i] = (char)node->n;
+i++;
+node = node->next;
 }
 
 if (i % 2 == 0)
@@ -33,7 +33,7 @@ else
 len = floor(i / 2);
 }
 
-for(j = 0; j < len; j++)
+for (j = 0; j < len; j++)
 {
 if (str[j] != str[i])
 {
