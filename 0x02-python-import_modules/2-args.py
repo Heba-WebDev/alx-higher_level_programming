@@ -10,7 +10,7 @@ if num_args == 0:
 elif num_args == 1:
     print("1 argument:")
 else:
-    print("{} arguments:".format(num_args))
+    print("{:d} argments:", format(num_args))
 
-for i in range(1, len(sys.argv)):
-    print("{:d}: {}".format(i + 1, sys.argv[i + 1]))
+for i in range(num_args):
+    print("{}: {}".format(i + 1, sys.argv[i + 1]))
