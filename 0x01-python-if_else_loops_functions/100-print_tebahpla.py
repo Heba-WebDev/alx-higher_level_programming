@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 
 x = 122
-output = ""
-while (x >= 97):
+while (x >= 65):
     if (x % 2 == 0):
-        output += "{}".format(chr(x))
+        print("{}".format(chr(x)), end="")
         x = x - 1
     else:
-        output += "{}".format(chr(x-32))
+        print("{}".format(chr(x-32)), end="")
         x = x - 1
-print(output)
