@@ -35,22 +35,22 @@ class Square:
         """Define the == comparision to a Square."""
         return self.area() == other.area()
 
-    def __noteql__(self, other):
-        """Define the != comparision to a Square."""
+    def __ne__(self, other):
+        """Define the != comparison to a Square."""
         return self.area() != other.area()
 
-    def __bigger__(self, other):
-        """Define the > comparision to a Square."""
-        return self.area() > other.area()
-
-    def __biggeroequl__(self, other):
-        """Define the >= comparision to a Square."""
-        return self.area() >= other.area()
-
-    def __smaller__(self, other):
-        """Define the < comparision to a Square."""
+    def __lt__(self, other):
+        """Define the < comparison to a Square."""
         return self.area() < other.area()
 
-    def __smalleroreul__(self, other):
-        """Define the <= comparision to a Square."""
+    def __le__(self, other):
+        """Define the <= comparison to a Square."""
         return self.area() <= other.area()
+
+    def __gt__(self, other):
+        """Define the > comparison to a Square."""
+        return self.area() > other.area()
+
+    def __ge__(self, other):
+        """Define the >= compmarison to a Square."""
+        return self.area() >= other.area()
