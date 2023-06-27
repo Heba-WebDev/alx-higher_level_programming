@@ -1,24 +1,36 @@
 #!/usr/bin/python3
-
-"""Define a class Square."""
+"""An empty class defining a square"""
 
 
 class Square:
-    """Represent a square."""
-
+    """Define a class square"""
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize a new Square.
-
-        Args:
-            size (int): The size of the new square.
-        """
-        self.size = size
+        """Initialize the square"""
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
         self.position = position
 
     @property
+    def size(self):
+        """defin private variable size"""
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """set value to size"""
+        if type(value) is not int:
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
+
+    @property
     def position(self):
-        """Get/set the current position of the square."""
-        return (self.__position)
+        "define private variable position"""
+        return elf.__position
 
     @position.setter
     def position(self, value):
@@ -33,22 +45,9 @@ class Square:
         else:
             self.__position = value
 
-    @property
-    def size(self):
-        """Get/set the current size of the square."""
-        return (self.__size)
-
-    @size.setter
-    def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
-
     def area(self):
-        """Return the current area of the square."""
-        return (self.__size * self.__size)
+        """find area of the sqaure"""
+        return self.__size ** 2
 
     def my_print(self):
         """print the ssqaure"""
