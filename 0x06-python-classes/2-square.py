@@ -8,9 +8,8 @@ class Square:
     def __init__(self, size=0):
         """Initialize a new Square.
         """
-        try:
-            self.__size = size
-        except TypeError:
-            print("ize must be an integer")
-        except ValueError:
-            print("size must be >= 0")
+        if size < 0:
+            raise TypeError("size must be >= 0")
+        elif not isinstance(size, int):
+            raise ValueError("size must be an integer")
+        self.__size = size
