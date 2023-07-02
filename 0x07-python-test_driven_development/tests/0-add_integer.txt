@@ -1,20 +1,50 @@
-import doctest
+Using ``add_integer``
 
-def run_doctest():
-    """
-    Test the add_integer function using doctest.
+------------------------------------------
 
-    >>> add_integer(1, 2)
-    3
-    >>> add_integer(1.0, 2.0)
-    3
-    >>> add_integer(1.5, 2.5)
-    3
-    >>> add_integer("1", 2)
+add_integer execpts two integers or floats, cast them to an int type
+before returing the sum of both numbers
+
+import the ``add_integer`` from ``add_integer``
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+test if b is an int or float and if not raise an TypeError:
+
+    >>> add_integer(3, "b")
     Traceback (most recent call last):
-        ...
-    TypeError: a must be an integer
-    """
-    doctest.testmod()
+        raise TypeError("b must be an integer")
+    TypeError: b must be an integer
 
-run_doctest()
+
+test if a is an int or float and if not raise an TypeError:
+
+    >>> add_integer("a", 5)
+    Traceback (most recent call last):
+        raise TypeError("b must be an integer")
+    TypeError: a must be an integer
+
+test two integers:
+
+    >>> add_integer(5, 5)
+    10
+
+Test two floats:
+    >>> add_integer(5.5, 5.5)
+    10
+
+Test a float and an integer:
+    >>> add_integer(6.2, 11)
+    17
+
+Test one argument as int:
+    >>> add_integer(2)
+    100
+
+Test one argument as float:
+    >>> add_integer(3.8889)
+    101
+
+Test more that two arguments:
+    >>> add_integer(2,4,5)
+    Traceback (most recent call last):
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
