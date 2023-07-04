@@ -4,9 +4,13 @@
 
 class Rectangle:
     """An empty class defining a rectangle"""
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -53,5 +57,6 @@ class Rectangle:
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Prints a message if an instang got deleted"""
+        """Prints a message if an instance got deleted"""
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
