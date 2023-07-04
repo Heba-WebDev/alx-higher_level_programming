@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""An empty class defining a rectangle."""
+"""An empty class defining a rectangle"""
 
 
 class Rectangle:
@@ -38,13 +38,13 @@ class Rectangle:
 
     def area(self):
         """Return the current area of the rectangle."""
-        return (self.__width * self.__height)
+        return self.width * self.height
 
     def perimeter(self):
         """Return the perimeter of the rectangle."""
-        if (self.__width == 0 or self.__height == 0):
+        if self.width == 0 or self.height == 0:
             return 0
-        return 2 * (self.__width + self.__height)
+        return (self.width + self.height) * 2
 
     def __str__(self):
         """Print"""
@@ -53,10 +53,10 @@ class Rectangle:
         return ((("#" * self.width) + "\n") * self.height)[:-1]
 
     def __repr__(self):
-        """String representation of the rectangle"""
+        """"String representation of the rectangle"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Prints a message if an instance got deleted"""
+        """print a message if an instance got deleted"""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
