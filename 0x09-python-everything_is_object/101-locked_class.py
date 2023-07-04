@@ -4,7 +4,7 @@
 
 class LockedClass:
     """Class Locked"""
-    __allowed__ = ['first_name']
+    __slots__ = ['first_name']
 
     def __init__(self):
         pass
