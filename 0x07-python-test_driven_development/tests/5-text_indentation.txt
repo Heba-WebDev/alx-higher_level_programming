@@ -1,0 +1,33 @@
+Using ``text_indentation``
+
+------------------------------------------
+
+text_indentation execpts a string, otherwise an error will be raised.
+It returns a text with 2 new lines after each of these characters -> ., ? :
+
+------------------------------------------
+
+Usage:
+======
+
+Import the ``text_indentation`` from ``5-text_indentation``
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+
+Correct input:
+    >>> text_indentation("Text doesn't have any special charachter")
+    Text doesn't have any special charachter
+
+Correct input:
+    >>> text_indentation("Let's print a new-line! Here goes:\nPrinted.")
+    Let's print a new-line! Here goes:
+    <BLANKLINE>
+    <BLANKLINE>
+    Printed.
+    <BLANKLINE>
+    
+
+Incorrect input:
+    >>> text_indentation(234)
+    Traceback (most recent call last):
+    TypeError: text must be a string
