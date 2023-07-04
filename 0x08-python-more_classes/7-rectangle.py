@@ -10,7 +10,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-        type(self).number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -48,15 +48,20 @@ class Rectangle:
 
     def __str__(self):
         """Print"""
+        result = ""
         if self.width == 0 or self.height == 0:
-            return ""
-        return ((("#" * self.width) + "\n") * self.height)[:-1]
+            return result
+        for i in range(self.__height):
+            result += (str(self.print_symbol) * self.__width)
+            if i != self.__height - 1:
+                result += "\n"
+        return result
 
     def __repr__(self):
-        """"String representation of the rectangle"""
+        """String representation of the rectangle"""
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """print a message if an instance got deleted"""
+        """Prints a message if an instance got deleted"""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
