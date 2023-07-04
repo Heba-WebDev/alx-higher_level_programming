@@ -75,6 +75,7 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return (rect_1)
 
+    @classmethod
     def square(cls, size=0):
-        rec = Rectangle(width=size, height=size)
-        return rec
+        """Returns a new instance of Rectangle class"""
+        return cls(size, size)
