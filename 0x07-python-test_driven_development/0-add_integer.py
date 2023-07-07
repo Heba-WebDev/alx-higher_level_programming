@@ -22,7 +22,7 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
     else:
         if type(a) is float:
-            a = int(a)
+            a = int(round(a))
         if type(b) is float:
-            b = int(b)
+            b = int(round(b))
         return a + b

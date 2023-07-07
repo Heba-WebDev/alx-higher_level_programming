@@ -29,8 +29,8 @@ test two integers:
     10
 
 Test two floats:
-    >>> add_integer(5.5, 5.5)
-    10
+    >>> add_integer(9.2, 3.556)
+    12
 
 Test a float and an integer:
     >>> add_integer(6.2, 11)
