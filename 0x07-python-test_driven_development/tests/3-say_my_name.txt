@@ -1,29 +1,31 @@
-Using ``say_my_name``
+``say_my_name``
 
-------------------------------------------
 
-say_my_name prints first name and last name.
-raises an error if either are not of type str.
+Usage
+=====
 
-------------------------------------------
+``say_my_name(...)`` prints "My name is <first_name> <last_name>".
 
-Usage:
-======
-
-valid input:
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
     >>> say_my_name("Brennan", "Baraban")
     My name is Brennan Baraban
 
 
+
     >>> say_my_name("Cornelius Maxwell", "Jones II")
     My name is Cornelius Maxwell Jones II
+
+second parameter is optional:
 
     >>> say_my_name("Brennan")
     My name is Brennan
 
-invalid input:
+
+Invalid input:
+The parameters ``first_name`` and ``last_name``` must be strings. Otherwise,
+a TypeError is raised.
+
 
     >>> say_my_name(6, "James")
     Traceback (most recent call last):
