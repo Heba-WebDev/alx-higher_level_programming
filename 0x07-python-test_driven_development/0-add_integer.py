@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import math
 
 """ Integers addition """
 
@@ -22,8 +21,8 @@ def add_integer(a, b=98):
     elif type(b) is not int and type(b) is not float:
         raise TypeError("b must be an integer")
     else:
-        if type(a) is float and not math.isnan(a):
-            a = int(math.floor(a))
-        if type(b) is float and not math.isnan(b):
-            b = int(math.floor(b))
+        if type(a) is float:
+            a = int(a // 1)
+        if type(b) is float:
+            b = int(b // 1)
         return a + b
