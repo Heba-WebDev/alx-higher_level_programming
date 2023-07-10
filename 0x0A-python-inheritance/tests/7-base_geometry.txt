@@ -1,6 +1,6 @@
-Import:
+Import BaseGeometry from 7-base_geometry module
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-    >>> mygeo = BaseGeometry()
+    >>> geo = BaseGeometry()
 
 For success:
     >>> mygeo.integer_validator("my_int", 2)
