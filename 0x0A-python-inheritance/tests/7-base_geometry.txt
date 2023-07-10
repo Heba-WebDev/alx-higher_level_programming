@@ -1,0 +1,17 @@
+Import:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> mygeo = BaseGeometry()
+
+For success:
+    >>> mygeo.integer_validator("my_int", 2)
+
+For failure (less or equal to zero):
+    >>> mygeo.integer_validator("my_int", -12)
+    Traceback (most recent call last):
+        raise ValueError("<value> must be greater than 0")
+    ValueError: my_int must be greater than 0
+
+For failure (not an int):
+    >>> mygeo.integer_validator("width", "hey")
+    Traceback (most recent call last):
+    TypeError: width must be an integer
