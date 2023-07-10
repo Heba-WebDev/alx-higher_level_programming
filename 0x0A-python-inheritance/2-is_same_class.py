@@ -3,5 +3,10 @@
 
 
 def is_same_class(obj, a_class):
-    """Checks if obj is instance of a_class"""
+    """Determines if an object is exactly an instance of a class.
+    Args:
+        obj (unknown): object whose type is to be checked.
+        a_class (str): class criteria to validate.
+    """
+
     return isinstance(obj, a_class)
