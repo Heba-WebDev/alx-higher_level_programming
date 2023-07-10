@@ -1,35 +1,77 @@
-Using ``1-my_list``
+       >>> MyList = __import__('1-my_list').MyList
 
-------------------------------------------
+       >>> my_list = MyList()
+       >>> my_list.append(1)
+       >>> my_list.append(4)
+       >>> my_list.append(2)
+       >>> my_list.append(3)
+       >>> my_list.append(5)
+       >>> print(my_list)
+       [1, 4, 2, 3, 5]
+       >>> my_list.print_sorted()
+       [1, 2, 3, 4, 5]
+       >>> print(my_list)
+       [1, 4, 2, 3, 5]
 
-MyList class inherits from list. It has a method print_sorted,
-that sorts the list in an ascending sort.
+       >>> my_list = MyList()
+       >>> my_list.append(0)
+       >>> my_list.append(0)
+       >>> my_list.append(0)
+       >>> my_list.append(0)
+       >>> my_list.append(0)
+       >>> print(my_list)
+       [0, 0, 0, 0, 0]
+       >>> my_list.print_sorted()
+       [0, 0, 0, 0, 0]
+       >>> print(my_list)
+       [0, 0, 0, 0, 0]
 
-------------------------------------------
+       >>> my_list = MyList()
+       >>> print(my_list)
+       []
+       >>> my_list.print_sorted()
+       []
+       >>> print(my_list)
+       []
 
-Usage:
-======
-Import MyList from 1-my_list module
->>> MyList = __import__("1-my_list").MyList
+       >>> my_list = MyList()
+       >>> my_list.append(1)
+       >>> print(my_list)
+       [1]
+       >>> my_list.print_sorted()
+       [1]
+       >>> print(my_list)
+       [1]
 
-#Test for positive numbers:
-    >>> my_list = MyList()
-    >>> my_list.append(8)
-    >>> my_list.append(2)
-    >>> my_list.append(9)
-    >>> my_list.print_sorted()
-    [2, 8, 9]
+       >>> my_list = MyList()
+       >>> my_list.append(-1)
+       >>> print(my_list)
+       [-1]
+       >>> my_list.print_sorted()
+       [-1]
+       >>> print(my_list)
+       [-1]
 
-Test for both positve and negative numbers:
-    >>> my_list.append(-89)
-    >>> my_list.append(-76)
-    >>> my_list.append(-82)
-    >>> my_list.print_sorted()
-    [-89, -82, -76, 2, 8, 9]
+       >>> my_list = MyList()
+       >>> my_list.append(50)
+       >>> my_list.append(-1)
+       >>> my_list.append(1)
+       >>> my_list.append(90)
+       >>> print(my_list)
+       [50, -1, 1, 90]
+       >>> my_list.print_sorted()
+       [-1, 1, 50, 90]
+       >>> print(my_list)
+       [50, -1, 1, 90]
 
-Test for decimals:
-    >>> my_list.append(-92)
-    >>> my_list.append(108)
-    >>> my_list.append(35.7)
-    >>> my_list.print_sorted()
-    [-92, -89, -82, -76, 2, 8, 9, 35.7, 108]
+       >>> my_list = MyList()
+       >>> my_list.append(90)
+       >>> my_list.append(0)
+       >>> my_list.append(0)
+       >>> my_list.append(0)
+       >>> print(my_list)
+       [90, 0, 0, 0]
+       >>> my_list.print_sorted()
+       [0, 0, 0, 90]
+       >>> print(my_list)
+       [90, 0, 0, 0]
