@@ -1,18 +1,14 @@
 #!/usr/bin/python3
-"""
-Class MyInt
-"""
+"""This program create a new int called MyInt and is rebel!!!"""
 
 
-class Square(int):
-    """
-    Inherits from int
-    """
+class MyInt(int):
+    """Class MyInt is like an int but Rebel"""
 
-    def __eq__(self, num):
-        """Rebal == """
-        return super().__ne__(num)
+    def __eq__(self, other_num):
+        """Rebel!!! equal is not equal"""
+        return super().__ne__(other_num)
 
-    def __ne__(self, num):
-        """Rebal != """
-        return super().__eq__(num)
+    def __ne__(self, other_num):
+        """Rebel!!! not equal is equal"""
+        return super().__eq__(other_num)
