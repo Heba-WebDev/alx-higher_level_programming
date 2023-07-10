@@ -2,6 +2,7 @@
 
 """List of available attributes and methods of an object"""
 
+
 def lookup(obj):
     """The object to return its attributes and methods"""
 
