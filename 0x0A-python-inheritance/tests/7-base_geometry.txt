@@ -1,9 +1,10 @@
 Import BaseGeometry from 7-base_geometry module
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-    >>> geo = BaseGeometry()
+    >>> mygeo = BaseGeometry()
 
 For success:
     >>> mygeo.integer_validator("my_int", 2)
+    >>>
 
 For failure (less or equal to zero):
     >>> mygeo.integer_validator("my_int", -12)
