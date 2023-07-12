@@ -4,8 +4,11 @@ after each line containing a specific string”"""
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """OAppends string to a file"""
+    """Appends string"""
     with open(filename, 'r') as f:
         data = f.read()
-        data = data.replace(search_string, new_string)
-    return data
+    with open(filename, 'w') as f:
+        for line in data:
+            f.write(line)
+            if (search_string in line):
+                f.write(new_string + '\n')
