@@ -8,3 +8,4 @@ def append_after(filename="", search_string="", new_string=""):
     with open(filename, 'r') as f:
         data = f.read()
         data = data.replace(search_string, new_string)
+    return data
