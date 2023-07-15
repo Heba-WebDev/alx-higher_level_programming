@@ -123,6 +123,16 @@ class Rectangle(Base):
                 elif k == "y":
                     self.y = v
 
+    def to_dictionary(self):
+        """Returns the dictionary
+        representation of a Rectangle"""
+        return {
+            "id": self.id,
+            "size": self.width,
+            "x": self.x,
+            "y": self.y
+        }
+
     def display(self):
         """Prints in stdout the Rectangle
         instance with the character #"""
