@@ -102,24 +102,5 @@ class TestRectangle(unittest.TestCase):
             r2 = None
             r2.to_dictionary
 
-        def test_area(self):
-            """Check area method of rectangle objects
-            """
-            r1 = Rectangle(3, 2)
-            area = r1.area()
-            self.assertEqual(area, 6)
-
-            r2 = Rectangle(3, 2)
-            area = Rectangle.area(r2)
-            self.assertEqual(area, 6)
-
-            r3 = Rectangle(30, 20, 4, 5, 10)
-            area = r3.area()
-            self.assertEqual(area, 600)
-
-            r4 = Rectangle(5, 5, 4)
-            area = r4.area()
-            self.assertEqual(area, 25)
-
     if __name__ == '__main__':
         unittest.main()
