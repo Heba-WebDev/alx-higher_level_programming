@@ -2,6 +2,7 @@
 """Class Base"""
 import json
 
+
 class Base:
     """Class initilization"""
     __nb_objects = 0
