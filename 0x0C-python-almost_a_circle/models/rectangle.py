@@ -84,6 +84,18 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 
+    def display(self):
+        """Prints in stdout the Rectangle
+        instance with the character #"""
+        for y in range(0, self.__y):
+            print()
+        for i in range(0, self.__height):
+            for x in range(0, self.__x):
+                print(" ", end="")
+            for j in range(self.__width):
+                print("#", end="")
+            print()
+
     def update(self, *args, **kwargs):
         """Updates attributes of an instance.
 
@@ -132,15 +144,3 @@ class Rectangle(Base):
             "x": self.x,
             "y": self.y
         }
-
-    def display(self):
-        """Prints in stdout the Rectangle
-        instance with the character #"""
-        for y in range(0, self.__y):
-            print()
-        for i in range(0, self.__height):
-            for x in range(0, self.__x):
-                print(" ", end="")
-            for j in range(self.__width):
-                print("#", end="")
-            print()
