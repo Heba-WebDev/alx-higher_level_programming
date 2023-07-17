@@ -53,6 +53,7 @@ class Rectangle(Base):
     def x(self):
         """Retrives value of x"""
         return self.x
+
     @x.setter
     def x(self, value):
         """Sets value of x"""
