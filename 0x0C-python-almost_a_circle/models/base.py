@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """Class Base"""
 import json
-from .square import Square
-
 
 class Base:
     """Class initilization"""
