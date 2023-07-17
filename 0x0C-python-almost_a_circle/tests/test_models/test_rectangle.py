@@ -100,5 +100,6 @@ class TestRectangle(unittest.TestCase):
             r2 = None
             r2.to_dictionary
 
+
 if __name__ == '__main__':
     unittest.main()
