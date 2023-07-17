@@ -135,6 +135,15 @@ class Rectangle(Base):
                 if key == "y":
                     self.y = value
 
+    def area(self):
+        """Method that returns the area of the rectangle object
+        Args:
+           Not arguments
+        Return:
+           Area of the rectangle object
+        """
+        return self.width * self.height
+
     def to_dictionary(self):
         """Returns the dictionary
         representation of a Rectangle"""
