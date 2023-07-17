@@ -22,7 +22,7 @@ class Rectangle(Base):
     @property
     def width(self):
         """Retrives value of width"""
-        return self.__width
+        return self.width
 
     @width.setter
     def width(self, value):
@@ -32,12 +32,12 @@ class Rectangle(Base):
         elif value <= 0:
             raise ValueError("width must be > 0")
         else:
-            self.__width = value
+            self.width = value
 
     @property
     def height(self):
         """Retrives value of height"""
-        return self.__height
+        return self.height
 
     @height.setter
     def height(self, value):
@@ -47,13 +47,12 @@ class Rectangle(Base):
         elif value <= 0:
             raise ValueError("height must be > 0")
         else:
-            self.__height = value
+            self.height = value
 
     @property
     def x(self):
         """Retrives value of x"""
-        return self.__x
-
+        return self.x
     @x.setter
     def x(self, value):
         """Sets value of x"""
@@ -62,12 +61,12 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("x must be >= 0")
         else:
-            self.__x = value
+            self.x = value
 
     @property
     def y(self):
         """Retrives value of y"""
-        return self.__y
+        return self.y
 
     @y.setter
     def y(self, value):
@@ -77,11 +76,11 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("y must be >= 0")
         else:
-            self.__y = value
+            self.y = value
 
     def area(self):
         """Returns area of the Rectangle"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def __str__(self):
         """Returns string representation of Rectangle"""
