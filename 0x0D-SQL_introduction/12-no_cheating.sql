@@ -1,0 +1,4 @@
+-- Lists aall records with a score >= 10 of the table second_table
+UPDATE `second_table`
+SET `score` = "10"
+WHERE `name` = "Bob";
