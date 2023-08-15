@@ -1,2 +1,2 @@
 -- Lists all tables
-Delete TABLES;
+SHOW TABLES;
