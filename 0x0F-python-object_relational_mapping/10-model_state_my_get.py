@@ -31,7 +31,6 @@ def list_arg_state():
     else:
         print("Not Found")
 
-
     session.close()
 
 
