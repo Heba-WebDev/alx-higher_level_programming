@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Lists all State objects containing
-the argument
-"""
+"""List all State objects containing argument from db"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
@@ -19,14 +16,14 @@ def list_arg_state_obj():
 
     rows = session.query(State).all()
 
-    result = ""
+    response = ""
 
     for i in rows:
         if sys.argv[4] in i.__dict__['name']:
-            result = i.__dict__['id']
+            response = i.__dict__['id']
 
-    if result != "":
-        print(result)
+    if response != "":
+        print(response)
     else:
         print("Not Found")
 
