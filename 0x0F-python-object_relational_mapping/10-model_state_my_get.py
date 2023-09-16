@@ -1,17 +1,15 @@
 #!/usr/bin/python3
 """
-Prints the State object with the name passed
-as argument from the database hbtn_0e_6_usa
+Lists all State objects containing
+the argument
 """
-
-
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from model_state import Base, State
 
 
-def list_arg_state():
+def list_arg_state_obj():
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
@@ -20,6 +18,7 @@ def list_arg_state():
     session = Session(engine)
 
     rows = session.query(State).all()
+
     result = ""
 
     for i in rows:
@@ -35,4 +34,4 @@ def list_arg_state():
 
 
 if __name__ == "__main__":
-    list_arg_state()
+    list_arg_state_obj()
