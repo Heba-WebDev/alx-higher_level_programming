@@ -18,6 +18,7 @@ def list_arg_state():
     Base.metadata.create_all(engine)
 
     session = Session(engine)
+
     rows = session.query(State).all()
     result = ""
 
