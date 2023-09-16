@@ -4,31 +4,25 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from model_state import Base, State
-
-
-def list_arg_state_obj():
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                           pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-
-    session = Session(engine)
-
-    rows = session.query(State).all()
-
-    response = ""
-
-    for i in rows:
-        if sys.argv[4] in i.__dict__['name']:
-            response = i.__dict__['id']
-
-    if response != "":
-        print(response)
-    else:
-        print("Not Found")
-
-    session.close()
+from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    list_arg_state_obj()
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@localhost/{}'
+        .format(sys.argv[1], sys.argv[2],
+                sys.argv[3]), pool_pre_ping=True)
+
+    Base.metadata.create_all(engine)
+
+    Session = sessionmaker(bind=engine)
+
+    session = Session()
+
+    states = session.query(State).\
+        filter(State.name == sys.argv[4]).order_by(State.id).all()
+    if states:
+        print("{}".format(states[0].id))
+    else:
+        print("Not found")
+    session.close()
