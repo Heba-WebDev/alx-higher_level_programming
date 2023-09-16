@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""List all State objects containing argument from db"""
+"""
+Adds the State object “Louisiana”
+to the database hbtn_0e_6_usa
+"""
 import sys
 from sqlalchemy import create_engine, Table, Column, Integer, String
 from sqlalchemy.orm import Session
