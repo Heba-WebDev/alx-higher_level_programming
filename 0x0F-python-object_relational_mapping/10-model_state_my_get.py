@@ -23,7 +23,7 @@ def list_first_state_obj():
 
     for i in rows:
         if sys.argv[4] in i.__dict__['name']:
-            res = i.__dict__['id']
+            result = i.__dict__['id']
 
     if result == "":
         print("Not Found")
